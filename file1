@@ -1,0 +1,29 @@
+timestamps {
+
+    
+
+  node ('angularjobs') {
+	stage('Clean Workspace') {
+		cleanWs()
+	}
+
+	stage ('Code Checkout') {
+		sh " git config --global credential.helper 'cache --timeout=7200' "
+		checkout([$class: 'GitSCM',
+		branches: [[name: 'main']],
+		doGenerateSubmoduleConfigurations: false,
+		extensions: [],
+		submoduleCfg: [],
+		userRemoteConfigs: [[credentialsId: 'github-2',
+		url: 'https://github.com/iCreateWorks/beacon-api-go.git']]])
+	}
+	stage('Script')
+ {
+ sh '''  echo "Pavan"
+         echo "kalyan"
+    '''
+ }
+ 
+      
+   }
+}
