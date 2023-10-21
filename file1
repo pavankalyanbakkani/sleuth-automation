@@ -2,7 +2,7 @@ timestamps {
 
     
 
-  node ('angularjobs') {
+  node ('Built-In Node') {
 	stage('Clean Workspace') {
 		cleanWs()
 	}
